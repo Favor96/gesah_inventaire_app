@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gesah_inventaire_app/view/vente_list_screen.dart';
 import 'package:gesah_inventaire_app/view/agent_list_screen.dart';
 import 'package:gesah_inventaire_app/view/caisse_screen.dart';
 import 'package:gesah_inventaire_app/view/categorie_list_screen.dart';
@@ -13,8 +14,10 @@ import 'package:gesah_inventaire_app/view/immo_screen.dart';
 import 'package:gesah_inventaire_app/view/inv_stock_detail.dart';
 import 'package:gesah_inventaire_app/view/login_screen.dart';
 import 'package:gesah_inventaire_app/view/menu_screen.dart';
+import 'package:gesah_inventaire_app/view/product_list_screen.dart';
 import 'package:gesah_inventaire_app/view/splash%20screen.dart';
 import 'package:gesah_inventaire_app/view/stock_screen.dart';
+import 'package:gesah_inventaire_app/view/achat_list_screen.dart';
 import 'package:go_router/go_router.dart';
 
 // Clé de navigation globale pour la ShellRoute
@@ -57,10 +60,23 @@ final GoRouter appRouter = GoRouter(
     GoRoute(
         path: '/category-list',
         name: 'category-list',
-        builder: (context, state) => const CategoryProductPage()),    GoRoute(
+        builder: (context, state) => const CategoryProductPage()),
+    GoRoute(
         path: '/creer-client',
         name: 'creer-client',
         builder: (context, state) => const AjouterClientPage()),
+    GoRoute(
+        path: '/product-list',
+        name: 'product-list',
+        builder: (context, state) => const ProductPage()),
+    GoRoute(
+        path: '/achat-list',
+        name: 'achat-list',
+        builder: (context, state) =>  AchatPage()),
+    GoRoute(
+        path: '/vente-list',
+        name: 'vente-list',
+        builder: (context, state) =>  VentePage()),
     GoRoute(
         path: '/inv-stock-detail',
         name: 'inventaire-stock-detail',

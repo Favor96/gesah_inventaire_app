@@ -167,7 +167,7 @@ class _MenuPageState extends State<MenuPage> {
                       iconColor: Colors.black,
                       label: 'Produit',
                       onTap: () {
-                        // Navigation vers Produit
+                        context.pushNamed('product-list');
                       },
                     ),
                   ),
@@ -178,7 +178,7 @@ class _MenuPageState extends State<MenuPage> {
                       iconColor: Colors.black,
                       label: 'Achat',
                       onTap: () {
-                        // Navigation vers Achat
+                        context.pushNamed('achat-list');
                       },
                     ),
                   ),
@@ -198,7 +198,7 @@ class _MenuPageState extends State<MenuPage> {
                       iconColor: Colors.black,
                       label: 'Vente',
                       onTap: () {
-                        // Navigation vers Vente
+                        context.pushNamed('vente-list');
                       },
                     ),
                   ),

@@ -221,7 +221,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: Row(
                   children: [
                     Expanded(
-                      child: GestureDetector(
+                      child: InkWell(
                         onTap: () => setState(() => _isLoginSelected = true),
                         child: Container(
                           padding: const EdgeInsets.symmetric(vertical: 16),
@@ -255,7 +255,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                     Expanded(
-                      child: GestureDetector(
+                      child: InkWell(
                         onTap: () => setState(() => _isLoginSelected = false),
                         child: Container(
                           padding: const EdgeInsets.symmetric(vertical: 16),

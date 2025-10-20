@@ -121,8 +121,8 @@ class _ClientsPageState extends State<ClientsPage> {
         actions: [
           IconButton(
             icon: Container(
-              width: 40,
-              height: 40,
+              width: 20,
+              height: 20,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 border: Border.all(color: Colors.black, width: 2),
@@ -130,7 +130,7 @@ class _ClientsPageState extends State<ClientsPage> {
               child: const Icon(
                 Icons.add,
                 color: Colors.black,
-                size: 24,
+                size: 15,
               ),
             ),
             onPressed: _addClient,
