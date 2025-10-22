@@ -209,7 +209,7 @@ class _MenuPageState extends State<MenuPage> {
                       iconColor: Colors.black,
                       label: 'Immobilisation',
                       onTap: () {
-                        // Navigation vers Immobilisation
+                        context.pushNamed('immobilisation-list');
                       },
                     ),
                   ),

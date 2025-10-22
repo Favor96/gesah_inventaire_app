@@ -272,9 +272,9 @@ class _VentePageState extends State<VentePage> {
                                   const Text(
                                     'Date *',
                                     style: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w600,
-                                      color: Colors.black87,
+                                      fontSize: 16,
+                                      color: AppTheme.inputLabel,
+                                      fontWeight: FontWeight.w500,
                                     ),
                                   ),
                                   const SizedBox(height: 8),
@@ -331,13 +331,14 @@ class _VentePageState extends State<VentePage> {
                                   const Text(
                                     'Status *',
                                     style: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w600,
-                                      color: Colors.black87,
+                                      fontSize: 16,
+                                      color: AppTheme.inputLabel,
+                                      fontWeight: FontWeight.w500,
                                     ),
                                   ),
                                   DropdownButtonFormField<String>(
                                     value: _selectedStatut,
+
                                     decoration:  InputDecoration(
                                       hintText: 'Selectionnez un status',
                                       filled: true,
@@ -373,6 +374,11 @@ class _VentePageState extends State<VentePage> {
                                               : status == 'payee'
                                               ? 'Payée'
                                               : 'Annulée',
+                                          style: TextStyle(
+                                              fontSize: 16,
+                                              color: AppTheme.inputText,
+                                              fontWeight: FontWeight.w600
+                                          ),
                                         ),
                                       );
                                     }).toList(),
@@ -381,6 +387,9 @@ class _VentePageState extends State<VentePage> {
                                         _selectedStatut = value;
                                       });
                                     },
+                                    style: TextStyle(  fontSize: 14,
+                                        color: AppTheme.inputText,
+                                        fontWeight: FontWeight.w600),
                                   ),
                                 ],
                               ),

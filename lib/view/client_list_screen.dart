@@ -253,7 +253,11 @@ class _ClientsPageState extends State<ClientsPage> {
           ),
 
           const SizedBox(height: 16),
-          const Divider(height: 1),
+          const Divider(
+            height: 1,
+            thickness: 0.5, // plus fin
+            color: Color(0xFFDDDDDD),
+          ),
           const SizedBox(height: 16),
 
           // Informations du client

@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart'; // 👈 Importer le package de services
 import 'package:gesah_inventaire_app/utils/app_theme.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'app_router.dart';
 
-void main() {
+void main() async  {
   // 1. Assure que les bindings Flutter sont initialisés avant de configurer l'UI
   WidgetsFlutterBinding.ensureInitialized();
-
+  await initializeDateFormatting('fr_FR', null);
   // 2. Définit le mode d'affichage de l'UI système
   //    'edgeToEdge' permet à votre app de dessiner sous les barres de statut et de navigation
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);

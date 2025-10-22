@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:gesah_inventaire_app/view/Immobilisation_detail_page.dart';
+import 'package:gesah_inventaire_app/view/affectation_form_page.dart';
+import 'package:gesah_inventaire_app/view/dashboard_screen.dart';
 import 'package:gesah_inventaire_app/view/vente_list_screen.dart';
 import 'package:gesah_inventaire_app/view/agent_list_screen.dart';
 import 'package:gesah_inventaire_app/view/caisse_screen.dart';
@@ -8,7 +11,8 @@ import 'package:gesah_inventaire_app/view/creer_client_screen.dart';
 import 'package:gesah_inventaire_app/view/creer_inv_caisse.dart';
 import 'package:gesah_inventaire_app/view/creer_inv_immo.dart';
 import 'package:gesah_inventaire_app/view/creer_inv_stock.dart';
-import 'package:gesah_inventaire_app/view/dashboard_screen.dart'; // 👈 Importer le nouveau DashboardScreen
+import 'package:gesah_inventaire_app/view/creer_inv_stock.dart';
+import 'package:gesah_inventaire_app/view/immobilisation_screen.dart'; // 👈 Importer le nouveau DashboardScreen
 import 'package:gesah_inventaire_app/view/home_screen.dart';
 import 'package:gesah_inventaire_app/view/immo_screen.dart';
 import 'package:gesah_inventaire_app/view/inv_stock_detail.dart';
@@ -78,9 +82,27 @@ final GoRouter appRouter = GoRouter(
         name: 'vente-list',
         builder: (context, state) =>  VentePage()),
     GoRoute(
-        path: '/inv-stock-detail',
-        name: 'inventaire-stock-detail',
-        builder: (context, state) => const InventaireStockDetail(inventoryNumber: '2', clientName: "Abbey", agent: "Komi Michel", date: "12-09-2025")),
+      path: '/immobilisation-list',
+      name: 'immobilisation-list',
+      builder: (context, state) => ImmobilisationScreen(),
+
+    ),
+    GoRoute(
+      path: '/immobilisation-detail',
+      name: 'immobilisation-detail',
+      builder: (context, state) {
+        final immobilisation = state.extra as Immobilisation;
+        return ImmobilisationDetailPage(immobilisation: immobilisation);
+      },
+    ),
+    GoRoute(
+      path: '/immobilisation-affectation',
+      name: 'immobilisation-affectation',
+      builder: (context, state) {
+        final immobilisation = state.extra as Immobilisation;
+        return AffectationFormPage(immobilisation: immobilisation);
+      },
+    ),
     ShellRoute(
       navigatorKey: _shellNavigatorKey,
       builder: (context, state, child) {
